@@ -1,0 +1,21 @@
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+bin
+obj
+
+# mstest test results
+TestResults
+
+# mstest files
+*.testsettings
+*.vsmdi
+
+# Visual Studio user options files
+
+*.suo
+*.user
+
+# Raw DLL files
+#*.dll
+
+# Debug files
+*.pdb
