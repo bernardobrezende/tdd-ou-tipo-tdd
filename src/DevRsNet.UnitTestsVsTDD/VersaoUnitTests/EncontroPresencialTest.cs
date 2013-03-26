@@ -93,13 +93,27 @@ namespace DevRsNet.UnitTestsVsTDD.VersaoUnitTests
         }
 
         [TestMethod]
+        public void Sortear_Brinde_Deve_Diminuir_Qtde_Brindes_Disponiveis()
+        {
+            // Arrange
+            EncontroPresencial encontro = new EncontroPresencial();
+            encontro.ListaPresenca = new List<string>();
+            encontro.QtdeBrindes = 2;
+            int qtdeBrindesEsperado = encontro.QtdeBrindes - 1;
+            // Act
+            string sorteado = encontro.SortearBrinde();
+            // Arrange
+            Assert.AreEqual(qtdeBrindesEsperado, encontro.QtdeBrindes); 
+        }
+
+        [TestMethod]
         public void Sortear_Brinde_Com_Participante_Que_Ja_Venceu_Deve_Retornar_Vazio()
         {
             // Arrange
             string participante = "Sortudo!";
             EncontroPresencial encontro = new EncontroPresencial();
             encontro.ListaPresenca = new List<string>();
-            encontro.QtdeBrindes = 1;
+            encontro.QtdeBrindes = 2;
             // Forçando apenas um participante para garantir o caso de teste
             encontro.ListaPresenca.Add(participante);
 
